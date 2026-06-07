@@ -4,53 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alapítvány - Demo</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css"> 
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container nav-content">
-            <img id="logo" src="nap_logo.png" alt="">
-            <div class="logo"></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Rólunk</a></li>
-                    <li><a href="#">Programok</a></li>
-                    <li><a href="#">Hírek</a></li>
-                    <li><a href="#">Kapcsolat</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="btn btn-primary">ADOMÁNYOZOK</a>
-        </div>
+<!-- NAVBAR -->
+    <header class="nap-navbar">
+        <!-- Dinamikusan betölti a nav-footer.js a navbar-t -->
     </header>
 
+
+
+<!-- MAIN CONTENT -->
     <main>
-        <section class="hero">
-            <div class="container">
+        <section class="nap-hero">
+            <div class="nap-container">
                 <h1>Segítsen, hogy segíthessünk!</h1>
-                <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nisl at szép barátságos alapítványunk céljaiért.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary">Online adományozás</a>
-                    <a href="#" class="btn btn-secondary">Adó 1% felajánlása</a>
+                <p class="nap-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nisl at szép barátságos alapítványunk céljaiért.</p>
+                <div class="nap-hero-btns">
+                    <a href="tamogatas.html#online-adomanyozas" class="nap-btn nap-btn-primary">Online adományozás</a>
+                    <a href="" class="nap-btn nap-btn-secondary">Adó 1% felajánlása</a>
                 </div>
             </div>
         </section>
 
-        <section class="content-section container">
+        <section class="nap-content-section nap-container">
             <h2>Kiemelt céljaink</h2>
-            <div class="grid">
-                <div class="card">
+            <div class="nap-grid">
+                <div class="nap-card">
                     <h3>Programjaink</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <div class="card">
+                <div class="nap-card">
                     <h3>Hogyan segítünk?</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-                <div class="card">
+                <div class="nap-card">
                     <h3>Eredményeink</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
@@ -58,14 +48,19 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>Alapítvány Adószáma: <alapitvany-adoszam></alapitvany-adoszam></p>
-            <p>Email: info@alapitvany.hu | Tel: +36 30 123 4567</p>
-        </div>
+
+
+<!-- FOOTER -->
+    <footer class="nap-footer border-top">
+        <!-- Dinamikusan betölti a nav-footer.js a footer-t -->
     </footer>
 
-    <script src="global-data.js"></script>
+
+
+<!-- SCRIPTS -->
+    <script src="scripts/global-data.js"></script>
+    <script src="scripts/nav-footer.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

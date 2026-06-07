@@ -34,7 +34,7 @@ customElements.define('alapitvany-bankszamla', Bankszamla);
 
 class Telefonszam extends HTMLElement {
     connectedCallback() {
-        this.textContent = "+3630 152 5797";
+        this.innerHTML = `<a href="tel:+36301525797">+36 30 152 5797</a>`;//"+3630 152 5797";
     }
 }
 //<alapitvany-telefonszam></alapitvany-telefonszam>
@@ -44,7 +44,7 @@ customElements.define('alapitvany-telefonszam', Telefonszam);
 
 class EmailCim extends HTMLElement {
     connectedCallback() {
-        this.textContent = "napfenyszigetalapitvany@gmail.com";
+        this.innerHTML = `<a href="mailto:napfenyszigetalapitvany@gmail.com">napfenyszigetalapitvany@gmail.com</a>`;
     }
 }
 //<alapitvany-email-cim></alapitvany-email-cim>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
 :root {
     --primary: #FFC837;      /* Napsárga */
     --secondary: #F05A28;    /* Narancsvörös */
@@ -7,20 +9,30 @@
     --white: #ffffff;
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Bootstrap beallitasok felulirasa (vissza az eredetire) */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+}
+
+/* Opcionális: A Bootstrap a bekezdések (p) alsó margóját is fix 1rem-re állítja. */
+p {
+    margin-bottom: 16px !important;
+}
+
 body {
-    font-family: 'Nunito', sans-serif;
-    background-color: var(--bg-warm);
-    color: var(--text-dark);
+    font-family: 'Nunito', 'Quicksand', sans-serif !important;
+    background-color: var(--bg-warm) !important;
+    color: var(--text-dark) !important;
     line-height: 1.6;
 }
 
-.container {
+.nap-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
@@ -28,91 +40,98 @@ body {
 }
 
 /* Navbar */
-.navbar {
+.nap-navbar {
     background: var(--white);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.nav-content {
+.nap-nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 #logo {
-    height: 50px;
+    height: 70px;
     width: auto;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-links {
+.nap-nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: 1.1rem;
 }
 
-.nav-links a {
+.nap-nav-links a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 700;
 }
 
 /* Gombok */
-.btn {
+.nap-btn {
     text-decoration: none;
     padding: 12px 25px;
     border-radius: 50px; /* Barátságos lekerekítés */
     font-weight: 700;
     transition: 0.3s;
     display: inline-block;
+    border: none;
 }
 
-.btn-primary {
+.nap-btn-primary {
     background-color: var(--secondary);
     color: var(--white);
 }
 
-.btn-secondary {
+.nap-btn-secondary {
     background-color: var(--accent);
     color: var(--white);
     margin-left: 10px;
 }
 
-.btn:hover {
+.nap-btn:hover {
     transform: scale(1.05);
     opacity: 0.9;
+    color: var(--white) !important;
 }
 
 /* Hero Section */
-.hero {
+.nap-hero {
     padding: 80px 0;
     background: linear-gradient(180deg, #ffffff 0%, var(--bg-warm) 100%);
 }
 
-.hero h1 {
+.nap-hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: var(--secondary);
 }
 
-.subtitle {
+.nap-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 30px;
 }
 
 /* Grid & Cards */
-.grid {
+.nap-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 50px;
 }
 
-.card {
+.nap-card {
     background: var(--white);
     padding: 30px;
     border-radius: 20px;
@@ -120,14 +139,58 @@ body {
     border-bottom: 5px solid var(--primary);
 }
 
-.card h3 {
+.nap-card h3 {
     margin-bottom: 15px;
     color: var(--accent);
 }
 
-.footer {
-    padding: 40px 0;
+/* FOOTER */
+.nap-footer {
     margin-top: 60px;
     background: #f1ede6;
     font-size: 0.9rem;
+}
+
+.nap-footer-logo {
+    height: 60px;
+    width: auto;
+}
+
+.nap-text-secondary {
+    color: var(--secondary) !important;
+}
+
+.nap-text-accent {
+    color: var(--accent) !important;
+}
+
+.nap-footer-secondary {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.nap-footer a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nap-footer a:hover {
+    color: var(--secondary);
+}
+
+/* elerhetosegek szovege zold, hover eseten pedig narancs*/
+#nap-elerhetosegek a {
+    font-weight: 500;
+    color: var(--accent);
+}
+
+#nap-elerhetosegek a:hover {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.nap-footer-links a,
+.nap-footer-bottom-links a,
+.nap-footer-social a {
+    font-weight: 600;
 }
