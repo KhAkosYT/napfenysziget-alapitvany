@@ -340,12 +340,13 @@ main {
 .nap-legal-item a {
     color: var(--secondary);
     text-decoration: underline;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .nap-legal-item a:hover {
-    color: var(--primary);
+    color: var(--poly-green);
     text-decoration: none;
+    font-size: 1.05rem;
 }
 
 /* FOOTER */
