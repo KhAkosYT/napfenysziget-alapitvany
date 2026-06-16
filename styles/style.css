@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
 
 :root {
-    --primary: #FFC837;      /* Napsárga */
-    --secondary: #F05A28;    /* Narancsvörös */
-    --accent: #7AC143;       /* Lombzöld */
-    --bg-warm: #FFF9F0;      /* Lágy krém */
-    --text-dark: #333333;    /* Sötét pala (Fekete helyett) */
+    /* --- LOGÓ SZÍNEK --- */
+    --bg-orange-deep: #f26522;    /* Vibráló mélynarancs */
+    --bg-orange-light: #f7941d;   /* Világosabb narancs */
+    --bg-yellow-gold: #fff200;    /* Aranysárga */
+    --poly-green: #00a651;        /* Élénk zöld (Gombokhoz kiváló) */
+    --poly-teal: #00aeef;         /* Türkiz / Égkék (Hover állapotokhoz) */
+    --poly-blue: #2e3192;         /* Királykék (Kiemelésekhez) */
+
+    /* --- ALAPVETŐ SZÍNEK --- */
+    --primary: var(--bg-yellow-gold);
+    --secondary: var(--bg-orange-deep);
+    --accent: var(--poly-green);
+    --bg-warm: #FFF9F0;           /* Lágy krém (README alapján) - fő tartalom háttér */
+    --text-dark: #222222;         /* Sötétebb, kontrasztosabb szöveg */
     --white: #ffffff;
+    --vanilla: #f1ede6;           /* Világos krém (README alapján) - navbar/footer háttér */
 }
 
 *, *::before, *::after {
@@ -25,11 +35,27 @@ p {
     margin-bottom: 16px !important;
 }
 
+/*
+Biztosítja, hogy az egyedi HTML elemek normál folyó szövegként (inline) 
+viselkedjenek, megelőzve a böngészőfüggő tördelési hibákat. 
+*/
+alapitvany-neve, alapitvany-adoszam, alapitvany-bankszamla, alapitvany-szekhely, birosagi-nyilvantartas-szam {
+    display: inline;
+}
+
+
 body {
     font-family: 'Nunito', 'Quicksand', sans-serif !important;
     background-color: var(--bg-warm) !important;
-    color: var(--text-dark) !important;
+    color: var(--text-dark);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+}
+
+main {
+    flex: 1;
 }
 
 .nap-container {
@@ -41,7 +67,7 @@ body {
 
 /* Navbar */
 .nap-navbar {
-    background: var(--white);
+    background: var(--vanilla); /* Világos krém a navbarhoz */
     padding: 0.5rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
@@ -75,7 +101,15 @@ body {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 700;
+    transition: 0.3s all ease-in-out;
 }
+
+.nap-nav-links a:hover {
+    color: var(--secondary);
+    font-size: 1.15rem;
+    transition: 0.4s all ease-in-out;
+}
+
 
 /* Gombok */
 .nap-btn {
@@ -107,12 +141,12 @@ body {
 
 /* Hero Section */
 .nap-hero {
-    padding: 80px 0;
-    background: linear-gradient(180deg, #ffffff 0%, var(--bg-warm) 100%);
+    padding: 80px 0 40px 0;
+    background: linear-gradient(135deg, var(--white) 0%, var(--bg-warm) 100%); /* Meleg gradiens az új --bg-warm-mal */
 }
 
 .nap-hero h1 {
-    font-size: 3rem;
+    font-size: 3rem; /* Marad narancssárga, ahogy kérted */
     margin-bottom: 20px;
     color: var(--secondary);
 }
@@ -136,7 +170,7 @@ body {
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-    border-bottom: 5px solid var(--primary);
+    border-bottom: 5px solid var(--bg-orange-light);
 }
 
 .nap-card h3 {
@@ -144,11 +178,183 @@ body {
     color: var(--accent);
 }
 
+.nap-content-section {
+    padding: 60px 0; /* Konzisztens függőleges térköz a tartalom szekcióknak */
+}
+
+/* oldalterkep.html */
+.nap-sitemap-container {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    border-left: 5px solid var(--primary);
+}
+
+.nap-sitemap-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.nap-sitemap-list > li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.nap-sitemap-list ul {
+    list-style: none;
+    padding-left: 25px;
+    margin-top: 10px;
+    border-left: 2px dashed var(--vanilla);
+}
+
+.nap-sitemap-list ul li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.nap-sitemap-list ul li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: -15px;
+}
+
+.nap-sitemap-list a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nap-sitemap-list a:hover {
+    color: var(--secondary);
+}
+
+.nap-sitemap-list a.active {
+    color: var(--secondary);
+}
+
+.nap-legal-intro {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 25px 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    text-align: left;
+    
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nap-legal-intro::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        color-mix(in srgb, var(--accent) 50%, transparent), 
+        transparent 60%
+    );
+    animation: rotateBorder 4s linear infinite;
+    z-index: -2;
+}
+
+.nap-legal-intro::after {
+    content: '';
+    position: absolute;
+    inset: 5px; 
+    background-color: var(--white);
+    border-radius: 10px; 
+    z-index: -1;
+}
+
+@keyframes rotateBorder {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.nap-legal-intro h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.nap-legal-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--white);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary);
+    text-align: left;
+}
+
+.nap-legal-item {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--vanilla);
+    position: relative;
+    padding-left: 35px;
+}
+
+.nap-legal-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.nap-legal-item h3 {
+    color: var(--poly-blue);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.nap-legal-item h3::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: block;
+}
+
+.nap-legal-item a {
+    color: var(--secondary);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.nap-legal-item a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
 /* FOOTER */
 .nap-footer {
     margin-top: 60px;
-    background: #f1ede6;
+    background: var(--vanilla); /* Világos krém a fő footer részhez */
     font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
 }
 
 .nap-footer-logo {
@@ -165,7 +371,9 @@ body {
 }
 
 .nap-footer-secondary {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(242, 101, 34, 0.5); /* A logó narancs színe 10% opacity-vel */
+    color: var(--text-dark);
+    padding: 15px 0;
 }
 
 .nap-footer a {
@@ -176,6 +384,16 @@ body {
 
 .nap-footer a:hover {
     color: var(--secondary);
+}
+
+.nap-footer-secondary a {
+    color: var(--text-dark) !important;
+    opacity: 0.7;
+}
+
+.nap-footer-secondary a:hover {
+    opacity: 1;
+    color: var(--poly-blue) !important;
 }
 
 /* elerhetosegek szovege zold, hover eseten pedig narancs*/

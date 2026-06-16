@@ -94,9 +94,6 @@ const footerhtml = `
             <div class="col-md-6 text-center text-md-end">
                 <ul class="list-inline mb-0 nap-footer-bottom-links">
                     <li class="list-inline-item me-3">
-                        <a href="adatvedelem.html"><small>Adatvédelem</small></a>
-                    </li>
-                    <li class="list-inline-item me-3">
                         <a href="impresszum.html"><small>Impresszum</small></a>
                     </li>
                     <li class="list-inline-item">

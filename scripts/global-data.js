@@ -79,3 +79,11 @@ class BirosagiNyilvantartasSzam extends HTMLElement {
 }
 //<birosagi-nyilvantartas-szam></birosagi-nyilvantartas-szam>
 customElements.define('birosagi-nyilvantartas-szam', BirosagiNyilvantartasSzam);
+
+class AlapitvanyDomain extends HTMLElement {
+    connectedCallback() {
+        this.textContent = "napfenysziget-alapitvany.hu";
+    }
+}
+//<alapitvany-domain></alapitvany-domain>
+customElements.define('alapitvany-domain', AlapitvanyDomain);

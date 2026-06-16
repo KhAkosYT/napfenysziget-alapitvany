@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napfénysziget Alapítvány</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css"> 
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+    <header class="nap-navbar">
+        <!-- Dinamikusan betölti a nav-footer.js a navbar-t -->
+    </header>
+
+
+<!-- MAIN CONTENT -->
+    <main>
+        <section class="nap-hero">
+            <div class="nap-container">
+                <h1>Impresszum</h1>
+            </div>
+        </section>
+
+        <section class="nap-content-section nap-container">
+            <div class="nap-legal-intro mb-5">
+                <h2><alapitvany-neve></alapitvany-neve></h2>
+                <p>A <alapitvany-domain></alapitvany-domain> weboldal bármilyen jellegű másolásával, letöltésével vagy szerkesztésével, feldolgozásával, értékesítésével, illetve tárolásával kapcsolatban minden jog fenntartva. Tilos az említett tevékenységek végrehajtása a <alapitvany-neve></alapitvany-neve> hozzájárulása nélkül.</p>
+            </div>
+
+            <div class="nap-legal-container text-start">
+                <div class="nap-legal-item">
+                    <h3>Hivatalos adatok</h3>
+                    <p><strong>Székhely:</strong> 
+                        <a href="https://www.google.com/maps/search/?api=1&query=6800+Hódmezővásárhely,+Szántó+Kovács+János+u.+87." target="_blank" rel="noopener">
+                            <alapitvany-szekhely></alapitvany-szekhely>
+                        </a>
+                    </p>
+                    <p><strong>Adószám:</strong> <alapitvany-adoszam></alapitvany-adoszam></p>
+                    <p><strong>Bírósági nyilvántartási szám:</strong> <birosagi-nyilvantartas-szam></birosagi-nyilvantartas-szam></p>
+                </div>
+
+                <div class="nap-legal-item">
+                    <h3>Adományozás és kapcsolat</h3>
+                    <p><strong>Bankszámlaszám:</strong> <alapitvany-bankszamla></alapitvany-bankszamla></p>
+                    <p><strong>Telefonszám:</strong> <alapitvany-telefonszam></alapitvany-telefonszam></p>
+                    <p><strong>E-mail cím:</strong> <alapitvany-email-cim></alapitvany-email-cim></p>
+                </div>
+
+                <div class="nap-legal-item">
+                    <h3>Tárhelyszolgáltató</h3>
+                    <p><strong>Név:</strong> Rackhost Informatikai Zrt.</p>
+                    <p><strong>Cím:</strong> 6722 Szeged, Tisza Lajos körút 41.</p>
+                    <p><strong>E-mail cím:</strong> info@rackhost.hu</p>
+                    <p><strong>Weboldal:</strong> <a href="https://www.rackhost.hu/" target="_blank">www.rackhost.hu</a></p>
+                </div>
+
+                <div class="nap-legal-item">
+                    <h3>Technikai információk</h3>
+                    <p><strong>Weboldal címe:</strong> <alapitvany-domain></alapitvany-domain></p>
+                    <p><strong>Weboldal kiadója:</strong> <alapitvany-neve></alapitvany-neve></p>
+                    <p><strong>Fejlesztés:</strong> Az oldal egyedi kódolással, tiszta HTML5, CSS3 és vanilla JavaScript nyelvek használatával készült.</p>
+                    <p><strong>Adatkezelés:</strong> A honlap nem használ sütiket és nem gyűjt adatokat a felhasználókról.</p>
+                    <p><strong>Weboldal készítője:</strong> Sedlák Ákos</p>
+                </div>
+            </div>
+
+            <p class="mt-5 text-muted">2026 &copy; <alapitvany-neve></alapitvany-neve> – Minden jog fenntartva.</p>
+        </section>
+    </main>
+
+
+<!-- FOOTER -->
+    <footer class="nap-footer border-top">
+        <!-- Dinamikusan betölti a nav-footer.js a footer-t -->
+    </footer>
+
+
+<!-- SCRIPTS -->
+    <script src="scripts/global-data.js"></script>
+    <script src="scripts/nav-footer.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

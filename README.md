@@ -14,6 +14,8 @@ Ez a dokumentum tartalmazza a Napfénysziget Alapítványnak készülő statikus
 | **Háttér / Nyugalom** | 🍦 | `#FFF9F0` | Oldalháttér (tiszta fehér helyett). |
 | **Szöveg / Keret** | ⚫ | `#333333` | **Szigorúan tilos a tiszta fekete!** |
 
+***Lényeg, hogy barátságos meleg színek legyenek használva!***
+
 ### Tipográfia és Stílus
 - **Betűtípus:** `Nunito` vagy `Quicksand` (Google Fonts) - kerekded, barátságos forma.
 - **Formavilág:** Nagy lekerekítések (min. 15px) a gombokon és kártyákon.
