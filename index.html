@@ -19,7 +19,7 @@
 <!-- MAIN CONTENT -->
     <main>
         <!-- HERO SZEKCIÓ: Erős felütés a design guide szerinti mottóval -->
-        <section class="nap-hero">
+        <section class="nap-hero nap-reveal">
             <div class="nap-container">
                 <h1>Napfény Sziget Alapítvány</h1>
                 <p class="nap-subtitle">„Esélyt, támogatást és reményt a jövőhöz.”</p>
@@ -31,7 +31,7 @@
         </section>
 
         <!-- BEMUTATKOZÓ ÉS VIDEÓ SZEKCIÓ: Itt kap helyet az RTL-es vagy személyes videó -->
-        <section class="nap-intro-section nap-container">
+        <section class="nap-intro-section nap-container nap-reveal">
             <div class="nap-grid-two-columns">
                 <div class="nap-intro-text">
                     <h2>Köszöntjük oldalunkon!</h2>
@@ -41,13 +41,6 @@
                 </div>
                 <div class="nap-video-container">
                     <div class="nap-video-wrapper">
-                        <!-- ha kifer a szoveg ez az iframe: 
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fvtvvasarhely%2Fvideos%2F1327761338554414%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                        -->
-
-                        <!-- ha a szoveg nem fér ki, akkor ez az iframe: 
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fvtvvasarhely%2Fvideos%2F1327761338554414%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                        -->
                         <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fvtvvasarhely%2Fvideos%2F1327761338554414%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
                     </div>
                 </div>
@@ -55,14 +48,14 @@
         </section>
 
         <!-- KIEMELT IDEZET: Sárga (#FFC837) háttérrel érdemes formázni CSS-ben -->
-        <section class="nap-quote-section text-center">
+        <section class="nap-quote-section text-center nap-reveal">
             <div class="nap-container nap-card nap-quote-box">
                 <p class="lead">„Nem mindenki tud nagy dolgokat tenni. De sok ember kis segítsége együtt életeket változtathat meg. Köszönjük, hogy Ön is a segítőink közé tartozik.” ❤️</p>
             </div>
         </section>
 
         <!-- ÁTTEKINTŐ SZEKCIÓ: A három fő pillér, ami a megfelelő aloldalakra irányít -->
-        <section class="nap-content-section nap-container">
+        <section class="nap-content-section nap-container nap-reveal">
             <h2>Hogyan építjük a jövőt?</h2>
             <div class="nap-grid">
                 <div class="nap-card">
@@ -97,6 +90,25 @@
     <script src="scripts/global-data.js"></script>
     <script src="scripts/nav-footer.js"></script>
     <script src="scripts/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.nap-reveal');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        // Eltávolítjuk az osztályt, ha kikerül a látómezőből, így visszagörgetésnél újra lefut
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, { threshold: 0.15 }); // Akkor indul, ha az elem 15%-a látszik
+
+            reveals.forEach(section => revealObserver.observe(section));
+        });
+    </script>
 
 </body>
 </html>

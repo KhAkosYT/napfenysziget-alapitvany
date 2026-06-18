@@ -165,6 +165,19 @@ main {
     margin-top: 50px;
 }
 
+/* Speciális, szélesebb rács a támogatás oldalhoz */
+.nap-grid-support {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+/* Centering the last card in nap-grid-support if it's alone in a row */
+.nap-grid-support .nap-corporate-card {
+    grid-column: 1 / -1; /* Make it span all available columns */
+    max-width: 600px; /* Limit its width so it doesn't stretch too much */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Kétoszlopos elrendezés (Hero utáni részhez) */
 .nap-grid-two-columns {
     display: grid;
@@ -522,4 +535,17 @@ main {
 .nap-footer-bottom-links a,
 .nap-footer-social a {
     font-weight: 600;
+}
+
+/* --- REVEAL ANIMÁCIÓ (Scroll-re jelentkező elemek) --- */
+.nap-reveal {
+    opacity: 0;
+    transform: translateY(50px); /* Alulról indul */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.nap-reveal.active {
+    opacity: 1;
+    transform: translateY(0); /* A helyére csúszik */
 }
