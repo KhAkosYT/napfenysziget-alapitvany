@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alapítvány - Demo</title>
+    <title>Napfény Sziget Alapítvány</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css"> 
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -18,31 +18,67 @@
 
 <!-- MAIN CONTENT -->
     <main>
+        <!-- HERO SZEKCIÓ: Erős felütés a design guide szerinti mottóval -->
         <section class="nap-hero">
             <div class="nap-container">
-                <h1>Segítsen, hogy segíthessünk!</h1>
-                <p class="nap-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nisl at szép barátságos alapítványunk céljaiért.</p>
+                <h1>Napfény Sziget Alapítvány</h1>
+                <p class="nap-subtitle">„Esélyt, támogatást és reményt a jövőhöz.”</p>
                 <div class="nap-hero-btns">
-                    <a href="tamogatas.html#online-adomanyozas" class="nap-btn nap-btn-primary">Online adományozás</a>
-                    <a href="" class="nap-btn nap-btn-secondary">Adó 1% felajánlása</a>
+                    <a href="tamogatas.html" class="nap-btn nap-btn-primary">Online adományozás</a>
+                    <a href="tamogatas.html#ado-1" class="nap-btn nap-btn-secondary">Adó 1% felajánlása</a>
                 </div>
             </div>
         </section>
 
+        <!-- BEMUTATKOZÓ ÉS VIDEÓ SZEKCIÓ: Itt kap helyet az RTL-es vagy személyes videó -->
+        <section class="nap-intro-section nap-container">
+            <div class="nap-grid-two-columns">
+                <div class="nap-intro-text">
+                    <h2>Köszöntjük oldalunkon!</h2>
+                    <p>A Napfény Sziget Rehabilitációs és Szociális Alapítványt azzal a céllal hoztuk létre, hogy segítséget nyújtsunk a hátrányos helyzetű, egészségügyi, szociális vagy élethelyzeti nehézségekkel küzdő emberek számára, valamint támogassuk társadalmi beilleszkedésüket, önálló életvitelüket és esélyegyenlőségüket.</p>
+                    <p>Küldetésünk, hogy hidat építsünk a segítségre szorulók és a lehetőségek között, valamint olyan támogató közösséget hozzunk létre, amelyben mindenki esélyt kap a fejlődésre.</p>
+                    <a href="rolunk.html" class="nap-btn nap-btn-secondary">Olvasson tovább rólunk</a>
+                </div>
+                <div class="nap-video-container">
+                    <div class="nap-video-wrapper">
+                        <!-- ha kifer a szoveg ez az iframe: 
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fvtvvasarhely%2Fvideos%2F1327761338554414%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                        -->
+
+                        <!-- ha a szoveg nem fér ki, akkor ez az iframe: 
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fvtvvasarhely%2Fvideos%2F1327761338554414%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                        -->
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fvtvvasarhely%2Fvideos%2F1327761338554414%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KIEMELT IDEZET: Sárga (#FFC837) háttérrel érdemes formázni CSS-ben -->
+        <section class="nap-quote-section text-center">
+            <div class="nap-container nap-card nap-quote-box">
+                <p class="lead">„Nem mindenki tud nagy dolgokat tenni. De sok ember kis segítsége együtt életeket változtathat meg. Köszönjük, hogy Ön is a segítőink közé tartozik.” ❤️</p>
+            </div>
+        </section>
+
+        <!-- ÁTTEKINTŐ SZEKCIÓ: A három fő pillér, ami a megfelelő aloldalakra irányít -->
         <section class="nap-content-section nap-container">
-            <h2>Kiemelt céljaink</h2>
+            <h2>Hogyan építjük a jövőt?</h2>
             <div class="nap-grid">
                 <div class="nap-card">
-                    <h3>Programjaink</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3>Küldetésünk</h3>
+                    <p>Hiszünk abban, hogy minden ember értékes, és megfelelő támogatással képes lehet életminőségének javítására, önállóságának növelésére, valamint aktív szerepet vállalni a társadalomban.</p>
+                    <a href="rolunk.html" class="nap-link">Küldetésünk részletei &rarr;</a>
                 </div>
                 <div class="nap-card">
-                    <h3>Hogyan segítünk?</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h3>Tevékenységeink</h3>
+                    <p>Támogatjuk a rehabilitációs programokat, tanácsadási szolgáltatásokat, képzéseket és olyan projekteket, amelyek javítják a rászorulók életminőségét.</p>
+                    <a href="tevekenysegeink-leiras.html" class="nap-link">Mit csinálunk pontosan? &rarr;</a>
                 </div>
                 <div class="nap-card">
-                    <h3>Eredményeink</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h3>Hogyan segíthet?</h3>
+                    <p>Minden támogatás számít. Legyen szó pénzbeli vagy tárgyi adományról, önkéntes munkáról vagy vállalati együttműködésről, Ön is részese lehet a változásnak.</p>
+                    <a href="tamogatas.html" class="nap-link">Támogatási lehetőségek &rarr;</a>
                 </div>
             </div>
         </section>

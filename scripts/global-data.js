@@ -2,7 +2,7 @@
 class AlapitvanyNeve extends HTMLElement {
     connectedCallback() {
         // Itt adjuk meg az értéket – ha változik, csak itt kell átírni!
-        this.textContent = "Napfénysziget Rehabilitációs és Szociális Alapítvány"; 
+        this.textContent = "Napfény Sziget Rehabilitációs és Szociális Alapítvány"; 
     }
 }
 
