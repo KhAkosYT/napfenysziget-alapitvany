@@ -549,3 +549,27 @@ main {
     opacity: 1;
     transform: translateY(0); /* A helyére csúszik */
 }
+
+
+#nap-elerhetosegek h2 {
+    color: var(--secondary);
+}
+
+
+#nap-elerhetosegek h4 {
+    color: var(--text-dark);
+}
+
+
+.nap-card h2 {
+    color: var(--accent);
+}
+
+
+.nap-map-container {
+    border: 5px solid var(--primary);
+}
+
+.nap-kapcsolat-link, .nap-kapcsolat-link a{
+    transition: 0.3s ease-in-out;
+}
