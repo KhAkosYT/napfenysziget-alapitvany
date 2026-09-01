@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Napfény Sziget Alapítvány hivatalos weboldala. Ismerje meg küldetésünket, tevékenységeinket és támogassa munkánkat a rászorulókért!">
+    <meta name="author" content="Napfény Sziget Alapítvány, Webfejlesztő: Sedlák Ákos">
+    <meta name="keywords" content="Napfény Sziget Alapítvány, adományozás, támogatás, szociális munka, rehabilitáció, közösségi programok, hátrányos helyzetűek segítése">
+    <link rel="icon" href="images/icon/nap_logo.png" type="image/x-icon">
+
     <title>Napfény Sziget Alapítvány</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css"> 
     <link rel="stylesheet" href="styles/style.css">
@@ -47,7 +52,7 @@
             </div>
         </section>
 
-        <!-- KIEMELT IDEZET: Sárga (#FFC837) háttérrel érdemes formázni CSS-ben -->
+        <!-- KIEMELT IDEZET: Sárga (#FFC837 / var(--primary)) háttérrel -->
         <section class="nap-quote-section text-center nap-reveal">
             <div class="nap-container nap-card nap-quote-box">
                 <p class="lead">„Nem mindenki tud nagy dolgokat tenni. De sok ember kis segítsége együtt életeket változtathat meg. Köszönjük, hogy Ön is a segítőink közé tartozik.” ❤️</p>
@@ -75,6 +80,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- HÍREK SZEKCIÓ: Dinamikusan betöltött híreink sárga háttérrel -->
+        <section class="nap-news-section text-center nap-reveal">
+            <div class="nap-container">
+                <h2>Legfrissebb híreink</h2>
+                <div class="nap-news-grid" id="nap-news-container">
+                    <!-- A hírek kártyáit ide tölti be a JavaScript a hirek-data.js-ből -->
+                </div>
+            </div>
+        </section>
     </main>
 
 
@@ -88,26 +103,47 @@
 
 <!-- SCRIPTS -->
     <script src="scripts/global-data.js"></script>
+    <script src="scripts/hirek-data.js"></script>
     <script src="scripts/nav-footer.js"></script>
     <script src="scripts/bootstrap.bundle.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Scroll animáció Observer
             const reveals = document.querySelectorAll('.nap-reveal');
-            
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                     } else {
-                        // Eltávolítjuk az osztályt, ha kikerül a látómezőből, így visszagörgetésnél újra lefut
                         entry.target.classList.remove('active');
                     }
                 });
-            }, { threshold: 0.15 }); // Akkor indul, ha az elem 15%-a látszik
+            }, { threshold: 0.15 });
 
             reveals.forEach(section => revealObserver.observe(section));
+
+            // Hírek kirajzolása közvetlenül a newsData változóból
+            renderNewsCards();
         });
+
+        function renderNewsCards() {
+            const container = document.getElementById('nap-news-container');
+            if (!container || typeof newsData === 'undefined') return;
+
+            container.innerHTML = newsData.map(news => `
+                <article class="nap-news-card">
+                    <div>
+                        <span class="nap-badge">${news.date}</span>
+                        <h3>${news.title}</h3>
+                    </div>
+                    <p>${news.shortDescription}</p>
+                    <a href="hirek.html#${news.id}" class="nap-btn nap-btn-primary">
+                        Részletek
+                    </a>
+                </article>
+            `).join('');
+}
     </script>
 
 </body>

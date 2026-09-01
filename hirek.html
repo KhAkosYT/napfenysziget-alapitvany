@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Napfény Sziget Alapítvány hivatalos weboldala. Ismerje meg küldetésünket, tevékenységeinket és támogassa munkánkat a rászorulókért!">
+    <meta name="author" content="Napfény Sziget Alapítvány, Webfejlesztő: Sedlák Ákos">
+    <meta name="keywords" content="Napfény Sziget Alapítvány, adományozás, támogatás, szociális munka, rehabilitáció, közösségi programok, hátrányos helyzetűek segítése">
+    <link rel="icon" href="images/icon/nap_logo.png" type="image/x-icon">
+
+    <title>Híreink & Beszámolóink - Napfény Sziget Alapítvány</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css"> 
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- FontAwesome az ikonokhoz -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+    <header class="nap-navbar">
+        <!-- Dinamikusan betölti a nav-footer.js a navbar-t -->
+    </header>
+
+
+<!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO HEADLINE -->
+        <section class="nap-hero text-center">
+            <div class="nap-container">
+                <h1>Híreink & Beszámolóink</h1>
+                <p class="nap-subtitle">
+                    Olvassa el legfrissebb eredményeinket, projektjeinket és a közösségünkért végzett munkánk részleteit!
+                </p>
+            </div>
+        </section>
+
+        <!-- HÍREK RÉSZLETES LISTÁJA -->
+        <section class="nap-content-section">
+            <div class="nap-container nap-news-detail-container" id="news-list-container">
+                <!-- A JavaScript ide generálja le a híreket a hirek-data.js alapján -->
+            </div>
+        </section>
+    </main>
+
+
+<!-- FOOTER -->
+    <footer class="nap-footer border-top">
+        <!-- Dinamikusan betölti a nav-footer.js a footer-t -->
+    </footer>
+
+    <!-- Lightbox Modal a képeknek -->
+    <div id="imageLightbox" class="lightbox-overlay" onclick="closeLightbox(event)">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Nagyított kép">
+    </div>
+
+<!-- SCRIPTS -->
+    <script src="scripts/global-data.js"></script>
+    <script src="scripts/hirek-data.js"></script>
+    <script src="scripts/nav-footer.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFullNews();
+            handleHashScroll();
+        });
+
+        function renderFullNews() {
+            const container = document.getElementById('news-list-container');
+            if (!container || typeof newsData === 'undefined') return;
+
+            container.innerHTML = newsData.map(news => {
+                // Bekezdésekre bontás
+                const formattedParagraphs = news.fullDescription
+                    .split('\n\n')
+                    .map(p => `<p>${p.trim()}</p>`)
+                    .join('');
+
+                // 1. KÉPGALÉRIA LOGIKA: Csak akkor gyárija le, ha van a tömbben legalább 1 kép!
+                let galleryHTML = '';
+                if (news.images && news.images.length > 0) {
+                    const imgItems = news.images.map(imgUrl => `
+                        <div class="nap-gallery-item">
+                            <img src="${imgUrl}" alt="${news.title}" loading="lazy">
+                        </div>
+                    `).join('');
+
+                    galleryHTML = `
+                        <div class="nap-news-gallery-container">
+                            <div class="nap-gallery-title">
+                                <i class="fa-regular fa-images"></i> Képek a beszámolóból
+                            </div>
+                            <div class="nap-news-gallery-grid">
+                                ${imgItems}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // 2. VIDEÓ / CIKK HTML (Ha van megadva a mediaHtml mező)
+                const mediaHTML = news.mediaHtml ? news.mediaHtml : '';
+
+                return `
+                    <article class="nap-news-detail-card" id="${news.id}">
+                        <span class="nap-badge">${news.date}</span>
+                        <h2>${news.title}</h2>
+                        
+                        <!-- SZÖVEGES TARTALOM -->
+                        <div class="nap-news-detail-body">
+                            ${formattedParagraphs}
+                        </div>
+
+                        <!-- KÉPGALÉRIA (CSAK HA VANNAK KÉPEK) -->
+                        ${galleryHTML}
+
+                        <!-- VIDEÓ / CIKK LINK (CSAK HA VAN MEGADVA) -->
+                        ${mediaHTML}
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Odagördülés a hír tetejéhez (#hash)
+        function handleHashScroll() {
+            const hash = window.location.hash;
+            if (hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        targetElement.classList.add('highlighted');
+                    }
+                }, 200);
+            }
+        }
+
+        // Lightbox nyitása és zárása
+        function openLightbox(src, alt = '') {
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Háttér görgetés letiltása
+        }
+
+        function closeLightbox(event) {
+        // Bezárás, ha a háttérre vagy az X gombra kattintanak
+        if (!event || event.target.id === 'imageLightbox' || event.target.classList.contains('lightbox-close')) {
+            const lightbox = document.getElementById('imageLightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Görgetés visszakapcsolása
+        }
+        }
+
+        // Billentyűzet támogatás (ESC gombra bezárás)
+        document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+        });
+
+        // Eseménydelegálás: bármelyik galériaképre kattintva megnyílik a modal
+        document.addEventListener('click', (e) => {
+        if (e.target.matches('.nap-gallery-item img')) {
+            openLightbox(e.target.src, e.target.alt);
+        }
+        });
+    </script>
+</body>
+</html>

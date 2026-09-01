@@ -208,6 +208,83 @@ main {
     background-color: var(--primary);
 }
 
+
+/* --- HÍREK SZEKCIÓ EGYEDI KONTÉNERE ÉS KÁRTYÁI --- */
+.nap-news-section {
+    padding: 80px 0;
+    background-color: var(--primary);
+}
+
+.nap-news-section h2 {
+    color: var(--text-dark);
+}
+
+/* Kibővítettjük a hírek konténerét 1350px-re, hogy legyen levegője a kártyáknak */
+.nap-news-section .nap-container {
+    max-width: 1350px !important;
+    padding: 0 25px !important;
+}
+
+/* Zöld dátum badge (a régi Bootstrap szürke helyett) */
+.nap-badge {
+    background-color: var(--accent); /* A megszokott zöld szín */
+    color: var(--white);
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+/* auto-fit minmax(280px): ha szűkös a hely, 2x2-re vált, így sosem lesznek keskeny oszlopok */
+.nap-news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+.nap-news-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+    border-bottom: 5px solid var(--bg-orange-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+.nap-news-card h3 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.nap-news-card p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 20px !important;
+}
+
+.nap-news-card .nap-btn {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* A gomb mindig a kártya legaljára tapad */
+.nap-news-card .nap-btn {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
 .nap-quote-box {
     padding: 40px !important;
     border-bottom: none !important;
@@ -572,4 +649,218 @@ main {
 
 .nap-kapcsolat-link, .nap-kapcsolat-link a{
     transition: 0.3s ease-in-out;
+}
+
+/* --- HÍREK DUMP/RÉSZLETEK OLDAL STÍLUSAI --- */
+.nap-news-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nap-news-detail-card {
+    scroll-margin-top: 100px; /* A sticky navbar miatti eltolás, hogy ne takarja el a címet */
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border-left: 6px solid var(--secondary);
+    margin-bottom: 50px;
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+/* Amikor a címsor / gomb hivatkozik rá (#id alapon), lágyan kiemeljük */
+.nap-news-detail-card:target,
+.nap-news-detail-card.highlighted {
+    border-left-color: var(--accent);
+    box-shadow: 0 0 25px rgba(242, 101, 34, 0.25);
+    transform: translateY(-3px);
+}
+
+.nap-news-detail-card h2 {
+    color: var(--secondary);
+    font-size: 1.75rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.nap-news-detail-body {
+    font-size: 1.05rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.nap-news-detail-body p {
+    margin-bottom: 18px !important;
+}
+
+/* --- KÉPGALÉRIA HELYETTESÍTŐ (PLACEHOLDER) --- */
+.nap-news-gallery-placeholder {
+    background-color: var(--bg-warm);
+    border: 2px dashed #ddd;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    margin-top: 25px;
+}
+
+.nap-news-gallery-placeholder i {
+    font-size: 2rem;
+    color: var(--bg-orange-light);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.nap-news-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Előkészített kis kép boxok a későbbi fotóknak */
+.nap-gallery-item-placeholder {
+    aspect-ratio: 4 / 3;
+    background-color: #e9e4dc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+/* --- KAPCSOLÓDÓ MÉDIA BEÁGYAZÓ KONTÉNER --- */
+.nap-news-media-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #eee;
+    text-align: left;
+    display: block;
+    justify-content: center;
+}
+
+.nap-news-media-box h5 {
+    font-size: 1.05rem;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.nap-news-media-box iframe {
+    border-radius: 12px;
+    border: none;
+    margin-inline: auto;
+    display: flex;
+}
+
+/* --- GALÉRIA BEÁLLÍTÁSOK (NATÚR PROPORCIÓK, 0% VÁGÁS) --- */
+.nap-news-gallery-container {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.nap-gallery-title {
+    font-size: 1rem;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Flexbox elrendezés: egymás mellé rendezi a képeket eredeti képarányaikban */
+.nap-news-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Képtartó doboz fix magassággal */
+.nap-gallery-item {
+    height: 200px; /* Itt állíthatod a kisképek magasságát */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background-color: #f8f9fa;
+    flex: 0 0 auto;
+}
+
+/* Az álló kép karcsú álló téglalap, a fekvő széles fekvő téglalap marad */
+.nap-gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nap-gallery-item img:hover {
+    transform: scale(1.04);
+    filter: brightness(0.95);
+}
+
+/* --- LIGHTBOX MODAL HÁTTÉR --- */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* A nagyított kép stílusa (teljes felbontásban, vágás nélkül) */
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active .lightbox-content {
+    transform: scale(1);
+}
+
+/* Bezáró X gomb */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    color: #ff4d4d;
 }
