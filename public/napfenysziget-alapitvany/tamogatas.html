@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Napfény Sziget Alapítvány hivatalos weboldala. Ismerje meg küldetésünket, tevékenységeinket és támogassa munkánkat a rászorulókért!">
+    <meta name="author" content="Napfény Sziget Alapítvány, Webfejlesztő: Sedlák Ákos">
+    <meta name="keywords" content="Napfény Sziget Alapítvány, adományozás, támogatás, szociális munka, rehabilitáció, közösségi programok, hátrányos helyzetűek segítése">
+    <link rel="icon" href="images/icon/nap_logo.png" type="image/x-icon">
+
+    <title>Támogatás - Napfény Sziget Alapítvány</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css"> 
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+    <header class="nap-navbar">
+        <!-- Dinamikusan betölti a nav-footer.js a navbar-t -->
+    </header>
+
+<!-- MAIN CONTENT -->
+    <main>
+        <section class="nap-hero">
+            <div class="nap-container">
+                <h1>Támogatás</h1>
+                <p class="nap-subtitle">„Nem mindenki tud nagy dolgokat tenni. De sok ember kis segítsége együtt életeket változtathat meg.” ❤️</p>
+            </div>
+        </section>
+
+        <section class="nap-content-section nap-container">
+            <div class="text-start mb-5">
+                <p>A Napfény Sziget Rehabilitációs és Szociális Alapítvány hisz abban, hogy a közösség ereje képes valódi változást teremteni. Munkánk során nap mint nap olyan emberekkel találkozunk, akik számára a segítség nem csupán támogatást, hanem reményt és új lehetőséget jelent.</p>
+                <p>Ahhoz, hogy küldetésünket megvalósíthassuk, szükségünk van az Ön támogatására is. Minden felajánlás, legyen az kicsi vagy nagy, közvetlenül a rászorulók életminőségének javítását szolgálja.</p>
+            </div>
+
+            <h2 class="mb-4">Hogyan segíthet?</h2>
+            
+            <div class="nap-grid nap-grid-support">
+                <!-- Pénzbeli adomány -->
+                <div class="nap-card" id="online-adomanyozas">
+                    <h3>Pénzbeli adomány</h3>
+                    <p>Az alapítvány működését egyszeri vagy rendszeres átutalással segítheti. A beérkező összegeket teljes átláthatóság mellett használjuk fel.</p>
+                    <div class="p-3 bg-light rounded text-start" style="font-size: 0.9rem;">
+                        <strong>Kedvezményezett:</strong><br>
+                        <alapitvany-neve></alapitvany-neve><br>
+                        <strong>Bankszámlaszám:</strong><br>
+                        <alapitvany-bankszamla></alapitvany-bankszamla><br>
+                        <strong>Közlemény:</strong> Adomány
+                    </div>
+                </div>
+
+                <!-- Adó 1% -->
+                <div class="nap-card" id="ado-1">
+                    <h3>Adó 1% felajánlása</h3>
+                    <p>Rendelkezzen adója 1%-áról alapítványunk javára. Ez Önnek nem kerül semmibe, nekünk viszont óriási segítséget jelent.</p>
+                    <div class="p-3 bg-light rounded text-start">
+                        <strong>Adószámunk:</strong><br>
+                        <span class="h5 text-primary"><alapitvany-adoszam></alapitvany-adoszam></span>
+                    </div>
+                    <p class="mt-5 mb-0 nap-text-secondary fw-bold fs-5">Köszönjük, ha ránk gondol az adóbevalláskor!</p>
+                </div>
+
+                <!-- Tárgyi adomány -->
+                <div class="nap-card">
+                    <h3>Tárgyi adományok</h3>
+                    <p>Szívesen fogadunk gyermekruhákat, fejlesztő eszközöket, iskolaszereket vagy informatikai eszközöket.</p>
+                    <p><strong>Leadási helyszín:</strong><br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=6800+Hódmezővásárhely,+Szántó+Kovács+János+u.+87." target="_blank" rel="noopener">
+                            <alapitvany-szekhely></alapitvany-szekhely>
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Önkéntesség -->
+                <div class="nap-card">
+                    <h3>Önkéntes munka</h3>
+                    <p>Segítsen idejével vagy szakmai tudásával! Várjuk lelkes önkéntesek jelentkezését programjainkhoz.</p>
+                    <p>
+                        <strong>Email:</strong> <alapitvany-email-cim></alapitvany-email-cim><br>
+                        <strong>Facebook:</strong> <facebook-link></facebook-link>
+                    </p>
+                </div>
+
+                <!-- Vállalati együttműködés -->
+                <div class="nap-card nap-corporate-card">
+                    <h3>Vállalati együttműködés</h3>
+                    <p>Várjuk azon vállalkozások jelentkezését, amelyek társadalmi felelősségvállalási programjuk keretében támogatnák céljainkat.</p>
+                    <div class="p-3 bg-light rounded text-start" style="font-size: 0.9rem;">
+                        <strong>Telefon:</strong> <alapitvany-telefonszam></alapitvany-telefonszam><br>
+                        <strong>Email:</strong> <alapitvany-email-cim></alapitvany-email-cim>
+                    </div>
+                    <a href="mailto:napfenyszigetalapitvany@gmail.com" class="nap-btn nap-btn-secondary w-100 text-center mt-3">Kapcsolatfelvétel</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="nap-quote-section text-center">
+            <div class="nap-container">
+                <p class="h4 italic">„Esélyt, támogatást és reményt a jövőhöz.”</p>
+            </div>
+        </section>
+    </main>
+
+<!-- FOOTER -->
+    <footer class="nap-footer border-top">
+        <!-- Dinamikusan betölti a nav-footer.js a footer-t -->
+    </footer>
+
+<!-- SCRIPTS -->
+    <script src="scripts/global-data.js"></script>
+    <script src="scripts/nav-footer.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

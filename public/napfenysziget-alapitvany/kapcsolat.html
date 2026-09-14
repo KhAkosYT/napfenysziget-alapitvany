@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Napfény Sziget Alapítvány hivatalos weboldala. Ismerje meg küldetésünket, tevékenységeinket és támogassa munkánkat a rászorulókért!">
+    <meta name="author" content="Napfény Sziget Alapítvány, Webfejlesztő: Sedlák Ákos">
+    <meta name="keywords" content="Napfény Sziget Alapítvány, adományozás, támogatás, szociális munka, rehabilitáció, közösségi programok, hátrányos helyzetűek segítése">
+    <link rel="icon" href="images/icon/nap_logo.png" type="image/x-icon">
+
+    <title>Kapcsolat - Napfénysziget Alapítvány</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css"> 
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+    <header class="nap-navbar">
+        <!-- Dinamikusan betölti a nav-footer.js a navbar-t -->
+    </header>
+
+
+
+<!-- MAIN CONTENT -->
+    <main>
+        <!-- Kapcsolat Hero szekció -->
+        <section class="nap-hero">
+            <div class="nap-container">
+                <h1>Kapcsolat</h1>
+                <p class="nap-subtitle">Kérdése van a működésünkkel kapcsolatban? Segítségre lenne szüksége, vagy támogatná munkánkat? Keressen minket bizalommal!</p>
+            </div>
+        </section>
+
+        <!-- Információk és Kapcsolatfelvétel szekció -->
+        <section class="py-5">
+            <div class="nap-container">
+                <div class="row gy-5 text-start">
+                    
+                    <!-- Bal oszlop: Elérhetőségek -->
+                    <div class="col-lg-5" id="nap-elerhetosegek">
+                        <h2 class="mb-4">Vegyük fel a kapcsolatot!</h2>
+                        <p class="mb-4">Alapítványunk munkatársa igyekszik a lehető leghamarabb megválaszolni minden megkeresést. Keressen minket bátran az alábbi elérhetőségek bármelyikén!</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold mb-1">Székhelyünk</h4>
+                            <p class="mb-0">
+                                <a class="nap-kapcsolat-link" href="https://www.google.com/maps/search/?api=1&query=6800+Hódmezővásárhely,+Szántó+Kovács+János+u.+87." target="_blank" rel="noopener">
+                                    <alapitvany-szekhely></alapitvany-szekhely>
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold mb-1">Telefonszám</h4>
+                            <p class="mb-0"><alapitvany-telefonszam class="nap-kapcsolat-link"></alapitvany-telefonszam></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold mb-1">E-mail cím</h4>
+                            <p class="mb-0"><alapitvany-email-cim class="nap-kapcsolat-link"></alapitvany-email-cim></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5 fw-bold mb-1">Közösségi oldalunk</h4>
+                            <p class="mb-0"><facebook-link class="nap-kapcsolat-link"></facebook-link></p>
+                        </div>
+                    </div>
+
+                    <!-- Jobb oszlop: Szöveges üdvözlőkártya közvetlen gombbal -->
+                    <div class="col-lg-7">
+                        <div class="nap-card text-start h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h2 class="h3 mb-4">Hogyan segíthetünk?</h2>
+                                <p class="mb-3">
+                                    Alapítványunk elkötelezett amellett, hogy minden megkeresésre érdemi választ adjon. Legyen szó támogatási lehetőségekről, önkéntes munkáról, vagy ha Önnek, esetleg hozzátartozójának van szüksége segítségre – mi itt vagyunk.
+                                </p>
+                                <p class="mb-4">
+                                    Kérjük, írjon nekünk közvetlenül e-mailt! A levélben röviden vázolja fel a megkeresés okát, hogy a témában leginkább jártas munkatársunk válaszolhasson Önnek.
+                                </p>
+                            </div>
+                            <!-- A gomb, ami megnyitja a látogató levelezőjét. Az e-mail címet írd át a sajátotokra! -->
+                            <a href="mailto:info@napfenysziget.hu?subject=Kapcsolatfelvétel - Napfénysziget Alapítvány" class="nap-btn nap-btn-primary text-center w-100">
+                                ÍRJON NEKÜNK E-MAILT
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Térkép Szekció -->
+        <section class="py-5 bg-white border-top">
+            <div class="nap-container">
+                <h2 class="mb-4 text-center">Itt megtalál minket</h2>
+                <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-sm nap-map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2745.244766861298!2d20.32785507693952!3d46.42407286915152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474404fa3e46c92d%3A0xc316886e3f05cf00!2zSMOzZG1lesWRdsOhc8OhcmhlbHksIFN6w6FudMOzIEtvdsOhY3MgSsOhbm9zIHUuIDg3LCA2ODAw!5e0!3m2!1shu!2shu!4v1710000000000!5m2!1shu!2shu" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+<!-- FOOTER -->
+    <footer class="nap-footer border-top">
+        <!-- Dinamikusan betölti a nav-footer.js a footer-t -->
+    </footer>
+
+
+
+<!-- SCRIPTS -->
+    <script src="scripts/global-data.js"></script>
+    <script src="scripts/nav-footer.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
